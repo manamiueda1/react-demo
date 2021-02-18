@@ -1,21 +1,70 @@
 import "./App.css";
 
-let pageContent = {
-  title: "React Notes",
-  paragraph1:
-    "a library is a collection of non-volatile resources used by computer programs, often for software development.",
-  paragraph2:
-    "These may include configuration data, documentation, help data, message templates, pre-written code and subroutines, classes, values or type specifications.",
-};
+let studentData = [
+  {
+    id: 1,
+    name: "Eddy",
+    color: "chartreuse",
+    school: "Nebula Academy",
+  },
+  {
+    id: 2,
+    name: "Chelsea",
+    color: "purple",
+    school: "Nebula Academy",
+  },
+  {
+    id: 3,
+    name: "Tauseef",
+    color: "orange",
+    school: "Nebula Academy",
+  },
+  {
+    id: 4,
+    name: "Maurice",
+    color: "red",
+    school: "Nebula Academy",
+  },
+  {
+    id: 5,
+    name: "D'aja",
+    color: "blue",
+    school: "Nebula Academy",
+  },
+  {
+    id: 6,
+    name: "Jasmine",
+    color: "pink",
+    school: "Nebula Academy",
+  },
+  {
+    id: 7,
+    name: "Anitria",
+    color: "blue",
+    school: "Nebula Academy",
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <h1>{pageContent.title}</h1>
-      <p>{pageContent.paragraph1}</p>
-      <p>{pageContent.paragraph2}</p>
+    <div>
+      <StudentList />
+      <StudentList />
+      <StudentList />
+      <StudentList />
     </div>
   );
+}
+
+function StudentList() {
+  return studentData.map((student) => (
+    <div className="studentCard">
+      <h1>Hi {student.name}</h1>
+      <p>
+        {student.name}'s favorite color is {student.color}
+      </p>
+    </div>
+  ));
 }
 
 export default App;
