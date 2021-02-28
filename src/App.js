@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home/Home.component";
 import StudentList from "./components/StudentList/StudentList.component";
+import Form from "./components/Form/Form.component";
 import "./App.css";
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/studentList" component={StudentList} />
+          <Route exact path="/students" component={StudentList} />
+          <Route exact path="/form" component={Form} />
         </Switch>
       </div>
     </Router>
