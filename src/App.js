@@ -4,6 +4,7 @@ import Home from "./components/Home/Home.component";
 import StudentList from "./components/StudentList/StudentList.component";
 import Form from "./components/Form/Form.component";
 import Monsters from "./components/Monsters/Monsters.component";
+import DogAPI from "./components/Dogs/DogsAPI.component";
 
 import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/students" component={StudentList} />
           <Route exact path="/form" component={Form} />
           <Route exact path="/monsters" component={Monsters} />
+          <Route exact path="/dogs" component={DogAPI} />
         </Switch>
       </div>
     </Router>
