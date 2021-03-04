@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import './monsters.styles.css';
 import CardList from './CardList/CardList.component'
+import Search from './Search/Search.component'
 
 class Monsters extends Component {
     constructor(){
         super()
         this.state = { 
-            monsters: []
+            monsters: [],
+            searchField: ''
         }
     }
 
@@ -17,10 +19,16 @@ class Monsters extends Component {
     }
 
     render(){
+        const {monsters, searchField} = this.state;
+        const filtered = monsters.filter((monster) =>
+            monster.name.toLowerCase().includes(searchField.toLowerCase())
+        )
+
         return(
             <div>
                 <h1>Monsters</h1>
-                <CardList monsters={this.state.monsters}/> 
+                <Search handleChange={(event) => this.setState({searchField: event.target.value})}/>
+                <CardList monsters={filtered}/> 
             </div>
         )
     }
