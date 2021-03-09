@@ -6,6 +6,7 @@ import Form from "./components/Form/Form.component";
 import Monsters from "./components/Monsters/Monsters.component";
 import DogAPI from "./components/Dogs/DogsAPI.component";
 import Movies from "./components/MovieAPI/Movies.component";
+import SingleMovie from "./components/SingleMovie/SingleMovie.component";
 
 import "./App.css";
 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/monsters" component={Monsters} />
           <Route exact path="/dogs" component={DogAPI} />
           <Route exact path="/movies" component={Movies} />
+          <Route exact path="/singleMovie/:id" component={SingleMovie} />
         </Switch>
       </div>
     </Router>

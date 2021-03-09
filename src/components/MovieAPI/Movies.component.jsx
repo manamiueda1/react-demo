@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import './movies.styles.css';
 
 class Movies extends Component {
@@ -28,7 +29,14 @@ console.log(this.state.movies)
         return(
             <div>
                 <h1>Movies</h1>
-                {this.state.movies.map(movie => <p>{movie.title}</p>)}
+                {this.state.movies.map(movie => {
+                    return(
+                        <div>
+                            <p>{movie.title}</p>
+                            <Link to={{pathname:`singleMovie/${movie.id}`, state: movie}}><button>View Movie</button></Link>
+                        </div>
+                    )
+                })}
             </div>
         )
     }
